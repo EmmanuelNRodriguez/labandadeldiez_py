@@ -1,0 +1,59 @@
+{% extends "core/base.html" %}
+{% block title %}Biografia{% endblock %}
+{% block background %}{% load static %}{% endblock %}
+
+{% block headers %}
+{% endblock %}
+
+{% block estilo%} {%load static%}
+<link rel="stylesheet" href="{% static 'core/css/biografia.css'%}"> 
+{% endblock %}
+
+{%block content%}{%load static%}
+<main>
+            
+    <div id="biografia">
+        <h2>Integrantes:</h2>
+        <ul>
+            <li>Diego "El Décimo" Martínez - Voz principal y guitarra eléctrica.</li>
+            <li>Carla "La Tecla" Rodríguez - Teclados y coros.</li>
+            <li>Jorge "El Riff" González - Guitarra líder.</li>
+            <li>María "La Púa" López - Bajo eléctrico.</li>
+            <li>Luis "El Ritmo" Pérez - Batería y percusión.</li>
+        </ul>
+
+        <h2>Biografía:</h2>
+        <p>La Banda del 10 nació en las calles vibrantes de la ciudad de Buenos Aires, Argentina.
+            Fundada por el carismático Diego Martínez, apodado "El Décimo" debido a su fascinación
+            por el número diez y su habilidad para componer canciones pegajosas,
+            la banda se formó en el año 2005. Diego era un talentoso guitarrista y vocalista
+            que soñaba con crear una música que capturara la pasión y la emoción del fútbol,
+            un deporte que amaba profundamente.
+
+            Diego reunió a un grupo de músicos talentosos que compartían su visión.
+            Carla "La Tecla" Rodríguez, una maestra de los teclados y los arreglos,
+            se unió para darle un toque mágico a las canciones. Jorge "El Riff" González,
+            conocido por su destreza en la guitarra líder,
+            aportó potentes riffs y solos que se convirtieron en una marca registrada de la banda.
+            María "La Púa" López, una bajista sólida y apasionada, y Luis "El Ritmo" Pérez,
+            un baterista enérgico y preciso, completaron la alineación.
+
+            El nombre de la banda, "La Banda del 10", era un homenaje a Diego Maradona,
+            el legendario futbolista argentino que llevaba el número 10 en su camiseta y
+            que inspiraba a Diego Martínez en su música.</p>
+            <br>
+        <h2> ¡¡Nuestros comienzos!! </h2>
+        <section img>
+            <img src="{% static 'core/img/guitarra.jpg' %}" width="150" alt="Diego en Guitarra">
+            <img src="{% static 'core/img/bajo.jpg' %}" width="150" alt="Maria en Bajo">
+            <img src="{% static 'core/img/bateria.jpg' %}" width="150" alt="Luis en bateria">
+            <img src="{% static 'core/img/carla.jpg' %}" width="150" height="" alt="Carla en teclado">
+            <img src="{% static 'core/img/vos y guitarra.webp' %}" width="143" alt="Jorge Guitarra principal">
+        </section>
+    </div>
+</main>
+{% endblock %}
+
+{% block codigos%} {%load static%}
+<script src="{% static 'core/js/carrito_head.js' %}"></script>
+{% endblock %}

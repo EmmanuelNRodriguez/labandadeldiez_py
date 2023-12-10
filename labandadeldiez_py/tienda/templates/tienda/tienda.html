@@ -1,0 +1,50 @@
+{% extends "core/base.html" %}
+{% block title %}Tienda{% endblock %}
+{% block background %}{% load static %}{% endblock %}
+
+{% block estilo%} {%load static%}
+<link rel="stylesheet" href="{% static 'core/css/tienda.css' %}"> 
+{% endblock %}
+
+{% block headers %}
+{% endblock %}
+
+{% block content %}
+<main>
+<div id="productos">
+
+{% for project in projects%}
+<div class="producto">
+    <p class="tit_prod{{ forloop.counter }}"><strong>{{project.title}}</strong></p>
+    <img class="img_pro" src="{{project.image.url}}" alt="Producto">
+    <p class="desc_prod">{{project.description}}</p>
+    <p><a href="{{project.link}}" target="blank">Mas informacion</a></p>
+    <p class="precio">{{project.price}}</p>
+    <div class="xCarrito">
+    <select name="p{{ forloop.counter }}" id="p{{ forloop.counter }}" class="butyselprod">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <button id="addp{{ forloop.counter }}" type="button" class="butyselprod">Agregar</button>
+    </div>
+</div>
+
+{% if forloop.last %}
+    {% with counter_value=forloop.counter %}
+      <p id="cantProd">{{ counter_value }}</p>
+    {% endwith %}
+  {% endif %}
+
+{% endfor%}
+</div>
+</main>
+{% endblock %}
+
+{% block codigos%} {%load static%}
+<script src="{% static 'core/js/carrita.js' %}"></script>
+{% endblock %}
+
+

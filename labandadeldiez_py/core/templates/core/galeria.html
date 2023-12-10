@@ -1,0 +1,52 @@
+{% extends "core/base.html" %}
+{% block title %}Galeria{% endblock %}
+{% block background %}{% load static %}{% endblock %}
+
+{% block estilo%} {%load static%}
+<link rel="stylesheet" href="{% static 'core/css/galeria.css' %}"> 
+{% endblock %}
+
+{% block headers %}
+{% endblock %}
+
+{% block content %} {%load static%}
+<main id="main_galeria">
+    <div class="row"> 
+        <div class="column">
+        <img src="{% static 'core/img/photo 1.jpg' %}" alt="photo 1">
+        <img src="{% static 'core/img/photo 2.jpg' %}" alt="photo 2">
+        <img src="{% static 'core/img/photo 3.jpg' %}" alt="photo 3">
+        <img src="{% static 'core/img/photo 4.jpg' %}" alt="photo 4">
+        <img src="{% static 'core/img/photo 5.jpg' %}" alt="photo 5">
+        </div>
+
+    <div class="column">
+        <img src="{% static 'core/img/photo 6.jpg' %}" alt="photo 6">
+        <img src="{% static 'core/img/photo 7.jpg' %}" alt="photo 7">
+        <img src="{% static 'core/img/photo 8.jpg' %}" alt="photo 8">
+        <img src="{% static 'core/img/photo 9.jpg' %}" alt="photo 9">
+        <img src="{% static 'core/img/photo 10.jpg' %}" alt="photo 10">
+        </div>
+
+    <div class="column">
+         <img src="{% static 'core/img/photo 11.jpg' %}" alt="photo 11">
+         <img src="{% static 'core/img/photo 12.jpg' %}" alt="photo 12">
+         <img src="{% static 'core/img/photo 13.jpg' %}" alt="photo 13">
+         <img src="{% static 'core/img/photo 14.jpg' %}" alt="photo 14">
+         <img src="{% static 'core/img/photo 15.jpg' %}" alt="photo 15">
+        </div>
+
+     <div class="column">
+         <img src="{% static 'core/img/photo 16.jpg' %}" alt="photo 16">
+         <img src="{% static 'core/img/photo 17.jpg' %}" alt="photo 17">
+         <img src="{% static 'core/img/photo 18.jpg' %}" alt="photo 18">
+         <img src="{% static 'core/img/photo 19.jpg' %}" alt="photo 19">
+         <img src="{% static 'core/img/photo 20.jpg' %}" alt="photo 20">
+        </div>
+   </div>
+</main>
+{% endblock %}}
+
+{% block codigos%} {%load static%}
+<script src="{% static 'core/js/carrito_head.js' %}"></script>
+{% endblock %}

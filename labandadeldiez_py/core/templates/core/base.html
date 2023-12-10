@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>{% block title %}{% endblock %} </title>
+{% load static %}
+    <!-- Estilos y fuentes del template  -->
+    
+    <link rel="shortcut icon" href="{% static 'core/img/banda.png' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}">
+    {% block estilo %}{% endblock %}
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+  <header>
+    <div id="cabecera">
+      <div id="arriba">
+          <div id="arrIzq">
+              <div id="clima">
+                  <div id="imag"></div>
+                  <div id="temp"></div>
+                  <div id="humi"></div>
+                  <div id="sens"></div>
+                  <div id="pres"></div>
+              </div>
+          </div>
+          <div id="contCarro">
+              <div id="carro">
+                  <div id="itemsCarr">
+                      <img src="{% static 'core/img/Carrito.png' %}" id="carr" alt="carrito">
+                      <p id="cantCarr">0</p>
+                  </div>
+                  <div id="buttons">
+                      <button id="botVer" type="button" onclick=verCarr()>Ver</button>
+                      <button id="botVaciar" type="button" onclick=vaciarCarr()>Vaciar</button>    
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div id="titulo">
+          <img id="img_titulo" src="{% static 'core/img/titulo1.png' %}" alt="">
+      </div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item {% if request.path == '/' %}seleccionado{% endif %}">
+            <a class=" nav-link " href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item {% if request.path == '/biografia' %}seleccionado{% endif %}">
+            <a class="nav-link" href="{% url 'biografia' %}">Biografia</a>
+          </li>
+          <li class="nav-item {% if request.path == '/tienda' %}seleccionado{% endif %}">
+            <a class="nav-link" href="{% url 'tienda' %}">Tienda</a>
+          </li>
+          <li class="nav-item {% if request.path == '/galeria' %}seleccionado{% endif %}">
+            <a class="nav-link" href="{% url 'galeria' %}">Galeria</a>
+          </li>
+          <li class="nav-item {% if request.path == '/contacto' %}seleccionado{% endif %}">
+            <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+
+  <body onload="cargarProductos()">   
+    <!-- Navegación -->
+
+    <!-- Cabecera -->
+    <header class="masthead" style="background-image: url('{% block background %}{% endblock %}')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              {% block headers %}{% endblock %}
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    {% comment %} contenido {% endcomment %}
+   
+    <div class="container">
+      <div class="row">   
+         {% block content %}{% endblock %}
+      </div>  
+    </div>
+  
+    <!-- Pie de página -->
+    <footer>
+      <div id="redes">
+        <a href="http://facebook.com.ar" target="_blank"><img class="img_red" src="{% static 'core/img/facebook.png' %}" alt=" logo facebook"></a>
+        <a href="https://www.instagram.com/" target="_blank"><img class="img_red" src="{% static 'core/img/instagram.png' %}"
+                alt=" logo instagram"></a>
+        <a href="https://www.linkedin.com/" target="_blank"><img class="img_red" src="{% static 'core/img/linkedin.png' %}" alt="logo linkedin"></a>
+        <a href="https://web.whatsapp.com/" target="_blank"><img class="img_red" src="{% static 'core/img/whatsapp.png' %}" alt="logo whatsapp"></a>
+    </div>
+    <small>La banda del 10 - 2023</small>
+    </footer>
+
+    <script src="{% static 'core/js/clima.js' %}"></script>
+    {% block codigos %}{% endblock %}
+
+  </body>
+
+</html>

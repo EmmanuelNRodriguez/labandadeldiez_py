@@ -1,0 +1,47 @@
+{% extends "core/base.html" %}
+{% block title %}Home{% endblock %}
+{% block background %}{% endblock %}
+
+{% block headers %}
+{% endblock %}
+
+{% block estilo%} {%load static%}
+<link rel="stylesheet" href="{% static 'core/css/index.css' %}"> 
+{% endblock %}
+
+{% block content %} {%load static%}
+<main id="main_index">
+    <div class="item">
+        <h2 class="titulo_sec">Bienvenidos a nuestra página oficial</h2>
+        <p class="p_index">Prepárate para disfrutar!!</p>
+        <video id="video" src="{% static 'core/video/Intro para concierto Situacion Límite.mp4'%}" autoplay preload="auto" muted
+            controls></video>
+    </div>
+
+    <div id="items_juntos">
+        <div class="item">
+            <p class="p_index">Próximamente en spotify</p>
+            <audio class="audio" src="{% static 'core/audio/Attaque 77 - Setentista (128 kbps).mp3'%}" preload="auto"
+                controls></audio>
+            <audio class="audio" src="{% static 'core/audio/Violencia (128 kbps).mp3'%}" preload="auto" controls></audio>
+            <audio class="audio" src="{%static 'core/audio/Attaque 77 - Ska del exodo (128 kbps).mp3'%}" preload="auto"
+                controls></audio>
+            <audio class="audio" src="{% static 'core/audio\Morrissey - Everyday Is Like Sunday (128 kbps).mp3'%}" preload="auto"
+                controls></audio>
+        </div>
+
+        <div class="item">
+            <p class="p_index">Nuestro próximo show</p>
+            <img id="img-promocional" src="{% static 'core/img/jauria.jpg'%}" alt="afiche promocional">
+        </div>
+    </div>
+</main>
+{% endblock %}
+
+{% block codigos%} {%load static%}
+<script src="{% static 'core/js/carrito_head.js' %}"></script>
+{% endblock %}
+
+
+
+
