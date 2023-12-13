@@ -3,7 +3,7 @@
 {% block background %}{% load static %}{% endblock %}
 
 {% block estilo%} {%load static%}
-<link rel="stylesheet" href="{% static 'core/css/tienda.css' %}"> 
+<link rel="stylesheet" href="{% static 'core/css/tienda.css' %}">
 {% endblock %}
 
 {% block headers %}
@@ -15,11 +15,11 @@
 
 {% for project in projects%}
 <div class="producto">
-    <p class="tit_prod{{ forloop.counter }}"><strong>{{project.title}}</strong></p>
+    <p id="titu_p{{ forloop.counter }}" class="tit_prod"><strong>{{project.title}}</strong></p>
     <img class="img_pro" src="{{project.image.url}}" alt="Producto">
-    <p class="desc_prod">{{project.description}}</p>
-    <p><a href="{{project.link}}" target="blank">Mas informaciones</a></p>
-    <p class="precio">{{project.price}}</p>
+    <p id="desc_p{{ forloop.counter }}" class="desc_prod">{{project.description}}</p>
+    <p><a href="{{project.link}}" target="blank">Mas informacion</a></p>
+    <p id="prec_p{{ forloop.counter }}" class="precio">${{project.price}}</p>
     <div class="xCarrito">
     <select name="p{{ forloop.counter }}" id="p{{ forloop.counter }}" class="butyselprod">
         <option value="1">1</option>
@@ -44,7 +44,5 @@
 {% endblock %}
 
 {% block codigos%} {%load static%}
-<script src="{% static 'core/js/carrita.js' %}"></script>
+<script src="{% static 'core/js/carrito.js' %}"></script>
 {% endblock %}
-
-
