@@ -2,13 +2,60 @@
 {% block title %}Contacto{% endblock %}
 {% block background %}{% load static %}{% endblock %}
 
-{% block headers %}
+{% block estilo%} {%load static%}
+<link rel="stylesheet" href="{% static 'core/css/contacto.css' %}">
 {% endblock %}
 
-{% block content %}
-<h1 class="titulo_sec"> Esta es contacto </h1>
+{% block content %} {%load static%}
+
+<main id="main_contacto">
+    <div class="contenedor_contacto">
+        <h2>Si querés contactarte con nosotros y enviarnos información relevante, elegí el área de interés y
+            escribínos.</h2>
+        <div class="formulario_contacto">
+            <form id="form">
+                <div class="fila">
+                    <div class="columna_izquierda">
+                        <label for="nombre" class="label_formulario">Nombre<span>*</span></label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Nombre (o apodo)">
+                    </div>
+                    <div class="columna_derecha">
+                        <label for="email" class="label_formulario">E-mail<span>*</span></label>
+                        <input type="email" id="email" name="email" placeholder="usuario@correo.com">
+                    </div>
+                </div>
+                <div class="fila">
+                    <div class="columna_izquierda">
+                        <label for="area" class="label_formulario">Área<span>*</span></label>
+                        <select id="area" name="area">
+                            <option value="default">Elegí el área de tu interés</option>
+                            <option value="integrantes">Integrantes</option>
+                            <option value="contrataciones">Contrataciones</option>
+                            <option value="management">Management</option>
+                            <option value="prensa">Prensa</option>
+                        </select>
+                    </div>
+                    <div class="columna_derecha">
+                        <label for="asunto" class="label_formulario">Asunto<span>*</span></label>
+                        <input type="text" id="asunto" name="asunto" placeholder="Asunto de tu mensaje">
+                    </div>
+                </div>
+                <div class="fila">
+                    <label for="mensaje" class="label_formulario">Mensaje<span>*</span></label>
+                    <textarea id="mensaje" name="mensaje" rows="10" cols="2" wrap="soft"
+                        placeholder="Tu mensaje"></textarea>
+                </div>
+                <div class="fila">
+                    <input id="boton" type="submit">
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+
 {% endblock %}
 
 {% block codigos%} {%load static%}
+<script src="{% static 'core/js/validacion.js' %}"></script>
 <script src="{% static 'core/js/carrito_head.js' %}"></script>
 {% endblock %}
