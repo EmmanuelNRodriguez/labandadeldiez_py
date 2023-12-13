@@ -74,6 +74,9 @@
     text-align: center;
 }
 
+#cantProd {
+    color: black;
+}
 /*Diseño responsive*/
 
 @media screen and (max-width: 950px) {
